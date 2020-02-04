@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CMS Navigation Module
+ *
+ * Adds CMS pages and custom links to category navigation.
+ *
+ * @author    Peter McWilliams <pmcwilliams@augustash.com>
+ * @copyright Copyright (c) 2019 August Ash (https://www.augustash.com)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="cms">
+            <group id="cms_navigation" translate="label" type="text" sortOrder="999" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CMS Navigation</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="side_left" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Links for Left of Menu</label>
+                    <source_model>Augustash\CmsNavigation\Model\Config\Source\CmsPage</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="side_right" translate="label" type="multiselect" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Links for Right of Menu</label>
+                    <source_model>Augustash\CmsNavigation\Model\Config\Source\CmsPage</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
